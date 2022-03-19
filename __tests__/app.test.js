@@ -2,6 +2,7 @@ const pool = require('../lib/utils/pool');
 const setup = require('../data/setup');
 const request = require('supertest');
 const app = require('../lib/app');
+const Bathroom = require('../lib/models/Bathroom');
 
 describe('hand-of-resources routes', () => {
   beforeEach(() => {
@@ -22,7 +23,16 @@ describe('hand-of-resources routes', () => {
       long: '122.689120',
     };
     const res = await request(app).post('/api/v1/bathrooms').send(expected);
-    console.log(res.body);
     expect(res.body).toEqual({ id: expect.any(String), ...expected });
   });
+
+  it('gets a list of bathrooms', async () => {
+    const expected = await Bathroom.findAll();
+    const res = await request(app).get('/api/v1/bathrooms');
+
+    expect(res.body).toEqual(expected);
+
+  });
+
+  
 });
