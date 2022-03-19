@@ -24,7 +24,7 @@ INSERT INTO
 
 
 
-CREATE TABLE waterStations (
+CREATE TABLE water_stations (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name TEXT NOT NULL,
     status TEXT NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE waterStations (
 
 
 INSERT INTO
-    waterStations (name, status, image_url, lat, long)
+    water_stations (name, status, image_url, lat, long)
  VALUES
     ('Rest Stop Water Station', 'Free', 'https://www.portland.gov/sites/default/files/styles/2_1_1600w/public/2020-02/main-gallery.jpg?itok=Rgx9qbwC', 45.528323, 122.689120 ),
     ('Safeway Water Station', 'Paid', 'https://images.dailyhive.com/20201028132908/portland-loo-f.jpg', 45.540156, 122.630223 );
