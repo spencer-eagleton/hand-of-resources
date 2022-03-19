@@ -10,4 +10,10 @@ CREATE TABLE bathrooms (
     image_url TEXT NOT NULL,
     lat DEC(8,6),
     long DEC(9,6)
-)
+);
+
+INSERT INTO
+    bathrooms (name, status, image_url, lat, long)
+ VALUES
+    ('Old Town Portland Loo', 'Closed', 'https://www.portland.gov/sites/default/files/styles/2_1_1600w/public/2020-02/main-gallery.jpg?itok=Rgx9qbwC', 45.528323, 122.689120 ),
+    ('Grant Park Public Restrooms', 'Open', 'https://images.dailyhive.com/20201028132908/portland-loo-f.jpg', 45.540156, 122.630223 );
