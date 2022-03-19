@@ -2,7 +2,7 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 
 DROP TABLE IF EXISTS bathrooms;
-DROP TABLE IF EXISTS waterStations;
+DROP TABLE IF EXISTS water_stations;
 
 
 CREATE TABLE bathrooms (
