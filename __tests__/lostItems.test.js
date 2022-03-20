@@ -66,4 +66,21 @@ describe('hand-of-resources routes', () => {
     
   });
 
+  it('deletes a lost item by id', async () => {
+    const initial = {
+      id: '1',
+      name: '1998 Honda Civic',
+      status: 'Stationary',
+      imageURL:
+                'https://www.portland.gov/sites/default/files/styles/2_1_1600w/public/2020-02/main-gallery.jpg?itok=Rgx9qbwC',
+      lat: '45.528323',
+      long: '122.689120',
+    };
+
+    const lostItem = await LostItem.insert(initial);
+    const res = await request(app).delete(`/api/v1/lostitems/${lostItem.id}`);
+    expect(res.body).toEqual(lostItem);
+  });
+
+
 });
