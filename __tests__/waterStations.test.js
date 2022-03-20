@@ -70,7 +70,7 @@ describe('hand-of-resources routes', () => {
     
   });
 
-  it('deletes an bathroom by id', async () => {
+  it('deletes an water Station by id', async () => {
     const initial = {
       id: '1',
       name: 'Rest Stop Water Station',
@@ -82,7 +82,7 @@ describe('hand-of-resources routes', () => {
     };
 
     const waterStation = await WaterStation.insert(initial);
-
+ 
 
     const res = await request(app).delete(`/api/v1/waterstations/${waterStation.id}`);
     expect(res.body).toEqual(waterStation);
