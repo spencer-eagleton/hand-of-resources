@@ -26,4 +26,12 @@ describe('hand-of-resources routes', () => {
     const response = await request(app).post('/api/v1/saferestareas').send(expected);
     expect(response.body).toEqual({ id: expect.any(String), ...expected });
   });
+
+  it('gets a list of safe rest areas', async () => {
+    const expected = await SafeRestArea.findAll();
+    const res = await request(app).get('/api/v1/saferestareas');
+
+    expect(res.body).toEqual(expected);
+
+  });
 });
